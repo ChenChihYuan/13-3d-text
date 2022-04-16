@@ -111,17 +111,17 @@ const torusMaterial = new THREE.MeshMatcapMaterial({
     matcap: matcapTexture_torus
 })
 
-// const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-// const torusKnot = new THREE.Mesh(geometry, torusMaterial);
-// donutMaterial.flatShading = true
-// torusMaterial.flatShading = true
-// scene.add(torusKnot);
+const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const torusKnot = new THREE.Mesh(geometry, torusMaterial);
 
-// gui.add(torusKnot.position, 'x')
-// .onChange(value => {
-//     geometry.parameters.radius = value;
-//     console.log(geometry.parameters.radius);
-// })
+torusMaterial.flatShading = true
+scene.add(torusKnot);
+
+gui.add(torusKnot.position, 'x')
+    .onChange(value => {
+        geometry.parameters.radius = value;
+        console.log(geometry.parameters.radius);
+    })
 
 
 /**
